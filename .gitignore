@@ -1,32 +1,172 @@
-# Prerequisites
-*.d
+using ConsoleApp134;
+using ConsoleApp134.ConsoleApp134;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+namespace ConsoleApp134
+{
 
-# Precompiled Headers
-*.gch
-*.pch
+    public class Hotel
+    {
+        public string Name { get; set; }
+        public List<Client> clients { get; set; }
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+        public void AddClient(Client client)
+        {
+            clients.Add(client);
+        }
+        public void SaveToFile()
+        {
 
-# Fortran module files
-*.mod
-*.smod
+        }
+    }
+    public class Client
+    {
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+    }
+    public class PremiumClient : Client
+    {
 
-# Executables
-*.exe
-*.out
-*.app
+    }
+    public class StandartClient : Client
+    {
+
+    }
+}
+
+
+//    namespace ConsoleApp134
+//{
+//    public class Hotel
+//    {
+//        public string Name { get; set; }
+//        public List&lt;Client&gt; Clients { get; set; }
+
+//    public Hotel(string name)
+//    {
+//        Name = name;
+//        Clients = new List& lt; Client & gt; ();
+//    }
+
+//    public void AddClient(Client client)
+//    {
+//        Clients.Add(client);
+//    }
+
+//    public void SaveToFile()
+//    {
+//        using (StreamWriter file = new StreamWriter(@"C:\temp\clients.txt"))
+//        {
+//            foreach (Client client in Clients)
+//            {
+//                string line = $"{client.FirstName} {client.LastName} {client.Email}";
+//                file.WriteLine(line);
+//            }
+//        }
+//    }
+//}
+
+//public class Client
+//{
+//    public string FirstName { get; set; }
+//    public string LastName { get; set; }
+//    public string Email { get; set; }
+
+//    public Client(string firstName, string lastName, string email)
+//    {
+//        FirstName = firstName;
+//        LastName = lastName;
+//        Email = email;
+//    }
+//}
+
+//public class PremiumClient : Client
+//{
+//    public PremiumClient(string firstName, string lastName, string email) : base(firstName, lastName, email)
+//    {
+//    }
+//}
+
+//class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        Hotel hotel = new Hotel("Marriott");
+
+//        Client client1 = new Client("John", "Smith", "john.smith@gmail.com");
+//        Client client2 = new Client("Jane", "Doe", "jane.doe@gmail.com");
+//        PremiumClient premiumClient1 = new PremiumClient("Bob", "Johnson", "bob.johnson@gmail.com");
+
+//        hotel.AddClient(client1);
+//        hotel.AddClient(client2);
+//        hotel.AddClient(premiumClient1);
+
+//        hotel.SaveToFile();
+
+//        Console.WriteLine("Clients saved to file.");
+
+//        Console.ReadLine();
+//    }
+//}
+
+
+
+namespace ConsoleApp134
+{
+
+    public class Hotel
+    {
+        public string Name { get; set; }
+        public List<Client> clients { get; set; }
+
+        public void AddClient(Client client)
+        {
+            clients.Add(client);
+        }
+        public void SaveToFile()
+        {
+
+        }
+    }
+
+    public Hotel(string name)
+    {
+        Name = name;
+        clients = new List& lt; Client & gt; ();
+    }
+
+    public void AddClient(Client client)
+    {
+        clients.Add(client);
+    }
+
+    public void SaveToFile()
+    {
+
+    }
+
+
+    public class Client
+    {
+        public string Name { get; set; }
+        public DateTime CheckInDate { get; set; }
+        public DateTime CheckOutDate { get; set; }
+        public int RoomNumber { get; set; }
+        public decimal TotalAmount { get; set; }
+    }
+
+    public class PremiumClient : Client
+    {
+        public decimal DiscountPercentage { get; set; }
+    }
+
+    public class StandardClient : Client
+    {
+
+    }
+}
